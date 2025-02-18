@@ -49,7 +49,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(tarefa-1-pico-gpio tarefa-1-pico-gpio.c )
+add_executable(tarefa-1-pico-gpio tarefa-1-pico-gpio.c inc/ssd1306.c)
 
 pico_set_program_name(tarefa-1-pico-gpio "tarefa-1-pico-gpio")
 pico_set_program_version(tarefa-1-pico-gpio "0.1")
@@ -60,7 +60,8 @@ pico_enable_stdio_usb(tarefa-1-pico-gpio 1)
 
 # Add the standard library to the build
 target_link_libraries(tarefa-1-pico-gpio
-        pico_stdlib hardware_pwm)
+        pico_stdlib hardware_pwm
+        hardware_adc)
 
 # Add the standard include files to the build
 target_include_directories(tarefa-1-pico-gpio PRIVATE
@@ -69,7 +70,10 @@ target_include_directories(tarefa-1-pico-gpio PRIVATE
 
 # Add any user requested libraries
 target_link_libraries(tarefa-1-pico-gpio 
-
+    pico_stdlib
+    hardware_pio
+    hardware_clocks
+    hardware_i2c
         )
 
 pico_add_extra_outputs(tarefa-1-pico-gpio)

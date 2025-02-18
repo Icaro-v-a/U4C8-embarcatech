@@ -21,7 +21,7 @@ Adicionalmente, o botão do joystick terá as seguintes funcionalidades:
 
 - Alternar o estado do LED Verde a cada acionamento.
 - Modificar a borda do display para indicar quando foi pressionado, alternando entre diferentes estilos de borda a cada novo acionamento.
-- 
+  
 Finalmente, o botão A terá a seguinte funcionalidade:
 
 - Ativar ou desativar os LED PWM a cada acionamento.
